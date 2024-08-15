@@ -16,12 +16,12 @@ import java.io.PrintStream;
 
 public class Compiler {
   public static void main(String[] args) throws Exception {
-    System.out.println("Current directory: " + System.getProperty("user.dir"));
+    //System.out.println("Current directory: " + System.getProperty("user.dir"));
 
-    String filename = "data.in";
-    String outputFile = "data.out";
-    InputStream input = new FileInputStream(filename);
-//    InputStream input = System.in;
+//    String filename = "data.in";
+//    String outputFile = "data.out";
+//    InputStream input = new FileInputStream(filename);
+    InputStream input = System.in;
 
     try {
       MxLexer lexer = new MxLexer(CharStreams.fromStream(input)); // lexer
@@ -39,12 +39,11 @@ public class Compiler {
       // Debug Printer
 //      ASTPrinter printer = new ASTPrinter(new PrintStream(outputFile));
 //      printer.visit(root);
-
       // Semantic Part
       SemanticChecker checker = new SemanticChecker();
       checker.visit(root);
 
-      System.out.println("\033[33m🎉  Done successfully.\033[0m");
+      //System.out.println("\033[33m  Done successfully.\033[0m");
     } catch (Error e) {
       //e.printStackTrace();
       //System.out.println("\033[31m😢 Process terminated with error.\033[0m");
@@ -52,6 +51,7 @@ public class Compiler {
       System.out.println(e.toString());
       System.exit(1);
     }
+    System.exit(0);
 //    System.out.println("!");
   }
 }

@@ -1,4 +1,4 @@
-package parser;// Generated from java-escape by ANTLR 4.11.1
+package parser;// Generated from C:/Users/lzh05/IdeaProjects/Compiler/Grammar/Mx.g4 by ANTLR 4.13.1
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -407,6 +407,18 @@ public class MxBaseListener implements MxListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitNewType(MxParser.NewTypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterConditionalExpr(MxParser.ConditionalExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitConditionalExpr(MxParser.ConditionalExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

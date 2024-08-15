@@ -74,7 +74,7 @@ expression : primary                                # AtomExpr
 
     | expression op = '&&' expression           # BinaryExpr
     | expression op = '||' expression           # BinaryExpr
-
+    | <assoc = right> expression '?' expression ':' expression    #conditionalExpr
     | <assoc=right> expression '=' expression   # AssignExpr
 
     | '[' '&'? ']' ('(' parameterList? ')')? '->' suite '(' argumentList? ')'     # LambdaExpr

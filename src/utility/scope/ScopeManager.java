@@ -30,8 +30,8 @@ public class ScopeManager {
 
   public void addItem(BaseInfo info) {
     if (scopeStack.peek() instanceof ClassScope) return ; // avoid class's function being pushed twice
-    if (getClassInfo(info.name) != null)
-      throw new SemanticError("name duplicated with class " + info.name, info.pos);
+//    if (getClassInfo(info.name) != null)
+//      throw new SemanticError("name duplicated with class " + info.name, info.pos);
     scopeStack.peek().addItem(info);
   }
 

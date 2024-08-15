@@ -1,4 +1,4 @@
-package parser;// Generated from java-escape by ANTLR 4.11.1
+package parser;// Generated from C:/Users/lzh05/IdeaProjects/Compiler/Grammar/Mx.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -382,6 +382,18 @@ public interface MxListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitNewType(MxParser.NewTypeContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code conditionalExpr}
+	 * labeled alternative in {@link MxParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterConditionalExpr(MxParser.ConditionalExprContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code conditionalExpr}
+	 * labeled alternative in {@link MxParser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitConditionalExpr(MxParser.ConditionalExprContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code AssignExpr}
 	 * labeled alternative in {@link MxParser#expression}.
