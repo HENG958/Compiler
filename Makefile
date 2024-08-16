@@ -1,15 +1,14 @@
+JAVA_SRC = $(shell find src -name '*.java')
+# Change this to the path of your antlr jar
+ANTLR_JAR = /usr/local/lib/antlr-4.13.1-complete.jar
 .PHONY: build
-build:
-    find -name '*.java' | xargs javac -d bin -cp /ulib/antlr-4.13.2-complete.jar
+build: $(JAVA_SRC)
+	javac -d bin $(JAVA_SRC) -cp $(ANTLR_JAR) -encoding UTF-8
+
+.PHONY: clean
+clean:
+	find bin -name '*.class' -or -name '*.jar' | xargs rm -f
 
 .PHONY: run
 run:
-    cd bin && java -cp /ulib/antlr-4.13.2-complete.jar:. Main
-
-.PHONY: Sema
-Sema:
-    ./testcases/sema/scripts/test.bash 'java -cp /ulib/antlr-4.13.2-complete.jar:bin Main' $(file)
-
-.PHONY: Semall
-Semall:
-    time -p ./testcases/sema/scripts/test_all.bash 'java -cp /ulib/antlr-4.13.2-complete.jar:bin Main' testcases/sema/
+    java -cp bin:/usr/local/lib/antlr-4.13.1-complete.jar Compiler
