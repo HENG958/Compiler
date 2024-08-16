@@ -18,10 +18,10 @@ public class Compiler {
   public static void main(String[] args) throws Exception {
     //System.out.println("Current directory: " + System.getProperty("user.dir"));
 
-    String filename = "data.in";
-    String outputFile = "data.out";
-    InputStream input = new FileInputStream(filename);
-    //InputStream input = System.in;
+//    String filename = "data.in";
+//    String outputFile = "data.out";
+//    InputStream input = new FileInputStream(filename);
+    InputStream input = System.in;
 
     try {
       MxLexer lexer = new MxLexer(CharStreams.fromStream(input)); // lexer
