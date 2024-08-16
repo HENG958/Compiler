@@ -1,6 +1,6 @@
 JAVA_SRC = $(shell find src -name '*.java')
 # Change this to the path of your antlr jar
-ANTLR_JAR = /usr/local/lib/antlr-4.13.1-complete.jar
+ANTLR_JAR = /ulib/antlr-4.13.1-complete.jar
 .PHONY: build
 build: $(JAVA_SRC)
 	javac -d bin $(JAVA_SRC) -cp $(ANTLR_JAR) -encoding UTF-8
@@ -11,4 +11,4 @@ clean:
 
 .PHONY: run
 run:
-    java -cp bin:/usr/local/lib/antlr-4.13.1-complete.jar Compiler
+    java -cp bin:/ulib/antlr-4.13.1-complete.jar Compiler
