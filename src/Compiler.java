@@ -21,7 +21,6 @@ public class Compiler {
 //    String filename = "data.in";
 //    String outputFile = "data.out";
 //    InputStream input = new FileInputStream(filename);
-
     InputStream input = System.in;
 
     try {
