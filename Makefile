@@ -11,4 +11,4 @@ clean:
 
 .PHONY: run
 run:
-java -cp bin:/usr/local/lib/antlr-4.13.1-complete.jar Compiler
+    java -cp bin:/usr/local/lib/antlr-4.13.1-complete.jar Compiler
