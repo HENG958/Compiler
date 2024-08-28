@@ -18,10 +18,11 @@ public class Compiler {
   public static void main(String[] args) throws Exception {
     //System.out.println("Current directory: " + System.getProperty("user.dir"));
 
-//    String filename = "data.in";
-//    String outputFile = "data.out";
-//    InputStream input = new FileInputStream(filename);
-    InputStream input = System.in;
+    String filename = "C:\\Users\\lzh05\\IdeaProjects\\Compiler\\src\\data.in";
+    String outputFile = "C:\\Users\\lzh05\\IdeaProjects\\Compiler\\src\\data.out";
+    InputStream input = new FileInputStream(filename);
+
+//    InputStream input = System.in;
 
     try {
       MxLexer lexer = new MxLexer(CharStreams.fromStream(input)); // lexer
@@ -45,11 +46,11 @@ public class Compiler {
 
       //System.out.println("\033[33m  Done successfully.\033[0m");
     } catch (Error e) {
-      //e.printStackTrace();
-      //System.out.println("\033[31m😢 Process terminated with error.\033[0m");
-      //throw new RuntimeException("Compiling failed.");
-      System.out.println(e.toString());
-      System.exit(1);
+      e.printStackTrace();
+      System.out.println("\033[31m😢 Process terminated with error.\033[0m");
+      throw new RuntimeException("Compiling failed.");
+//      System.out.println(e.toString());
+//      System.exit(1);
     }
     System.exit(0);
 //    System.out.println("!");

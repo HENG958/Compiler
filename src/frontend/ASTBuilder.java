@@ -1,14 +1,14 @@
 package frontend;
 
-import ast.*;
-import ast.definition.*;
-import ast.expression.*;
-import ast.statement.*;
+import frontend.ast.*;
+import frontend.ast.definition.*;
+import frontend.ast.expression.*;
+import frontend.ast.statement.*;
 import utility.error.SemanticError;
 import utility.info.FuncInfo;
 import utility.info.VarInfo;
-import parser.MxBaseVisitor;
-import parser.MxParser;
+import frontend.parser.MxBaseVisitor;
+import frontend.parser.MxParser;
 import utility.Position;
 import utility.type.BaseType;
 import utility.type.BaseType.BuiltinType;

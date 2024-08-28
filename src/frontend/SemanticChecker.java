@@ -1,10 +1,10 @@
 package frontend;
 
-import ast.ASTVisitor;
-import ast.RootNode;
-import ast.definition.*;
-import ast.expression.*;
-import ast.statement.*;
+import frontend.ast.ASTVisitor;
+import frontend.ast.RootNode;
+import frontend.ast.definition.*;
+import frontend.ast.expression.*;
+import frontend.ast.statement.*;
 import utility.error.SemanticError;
 import utility.info.*;
 import utility.scope.*;
@@ -55,8 +55,8 @@ public class SemanticChecker implements ASTVisitor {
     scopeManager.pushScope(new FuncScope(node.info));
     node.info.paraListInfo.forEach(scopeManager::addItem);
     node.stmts.accept(this);
-    if (!scopeManager.getFuncScope().isReturn && !BaseType.isVoidType(node.info.funcType.retType))
-      throw new SemanticError("Missing Return Statement", node.pos);
+//    if (!scopeManager.getFuncScope().isReturn && !BaseType.isVoidType(node.info.funcType.retType))
+//      throw new SemanticError("Missing Return Statement", node.pos);
     scopeManager.popScope();
   }
 
@@ -274,7 +274,7 @@ public class SemanticChecker implements ASTVisitor {
     if (funcScope == null)
       throw new SemanticError("Return should be in a function", node.pos);
 
-    funcScope.isReturn = true;
+//    funcScope.isReturn = true;
     if (node.ret != null) node.ret.accept(this);
 
     if (funcScope.info.name.equals("Lambda")) { // lambda
